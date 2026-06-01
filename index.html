@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus3 // Web3 Developer Hub & Portfolio</title>
+    <meta name="description" content="A premium interactive dashboard to master Web3 development, deploy decentralized solutions, and launch a profitable freelance career.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Background glows -->
+    <div class="glow-sphere glow-1"></div>
+    <div class="glow-sphere glow-2"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-accent">NEXUS</span>//3
+        </div>
+        <nav class="nav-links">
+            <a href="#dashboard" class="nav-link active">Dashboard</a>
+            <a href="#roadmap" class="nav-link">Skill Roadmap</a>
+            <a href="#dapps" class="nav-link">Interactive DApps</a>
+            <a href="#freelance" class="nav-link">Earning Strategy</a>
+        </nav>
+        <div class="wallet-container">
+            <button id="walletBtn" class="btn btn-primary btn-glow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+                <span id="walletText">Connect Wallet</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-badge">Web3 Accelerator System Enabled</div>
+            <h1 class="hero-title">Forge Your Path in the <span class="text-gradient">Decentralized Web</span></h1>
+            <p class="hero-subtitle">
+                Master the next generation of internet protocols, build highly-scalable dApps, and turn smart contract development into a sustainable source of income.
+            </p>
+            <div class="hero-actions">
+                <a href="#roadmap" class="btn btn-secondary">Explore Roadmap</a>
+                <a href="#dapps" class="btn btn-accent btn-glow">Try Interactive DApps</a>
+            </div>
+        </section>
+
+        <!-- Section: Dashboard -->
+        <section id="dashboard" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Developer Command Center</h2>
+                <p class="section-desc">Live simulation metrics and network states</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <!-- Gas Tracker Card -->
+                <div class="card glass-card tracker-card">
+                    <div class="card-header">
+                        <span class="card-icon cyan-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V2a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v20Z"/><path d="M20 9H4"/><path d="M4 5h16"/><path d="M12 14v4"/><path d="M8 18h8"/></svg>
+                        </span>
+                        <h4>Ethereum Gas Tracker</h4>
+                    </div>
+                    <div class="metric-value" id="gasVal">24 <span class="unit">Gwei</span></div>
+                    <div class="metric-desc">Safe Low: <span id="gasLow">21</span> | Fast: <span id="gasFast">32</span></div>
+                    <div class="badge badge-success">Network Stable</div>
+                </div>
+
+                <!-- Web3 Market Pulse -->
+                <div class="card glass-card tracker-card">
+                    <div class="card-header">
+                        <span class="card-icon purple-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <h4>ETH Market Pulse</h4>
+                    </div>
+                    <div class="metric-value" id="ethPrice">$3,421.80</div>
+                    <div class="metric-desc percentage positive">+4.23% (24h)</div>
+                    <div class="badge badge-purple">High Volume</div>
+                </div>
+
+                <!-- Simulated Learning Yield -->
+                <div class="card glass-card tracker-card">
+                    <div class="card-header">
+                        <span class="card-icon yellow-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l3 13"/><path d="M13 3l3 9-3 13"/><path d="M2 9h20"/></svg>
+                        </span>
+                        <h4>Developer Level</h4>
+                    </div>
+                    <div class="metric-value">Lv. 1 <span class="unit">Initiate</span></div>
+                    <div class="metric-desc">Exp to Level Up: <span id="expVal">0 / 100</span></div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="expBar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donations & Support Component -->
+            <div class="card glass-card donation-card" style="margin-top: 32px; border-left: 4px solid var(--primary); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+                <div style="flex: 1; min-width: 280px;">
+                    <h3 style="font-family: var(--font-mono); color: var(--primary); margin-bottom: 6px; font-size: 1.25rem;">💖 Support & Funding Protocol</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary);">If this accelerator tool is helping you kickstart your Web3 development journey, consider supporting with a voluntary EVM/Ethereum network donation.</p>
+                </div>
+                <div style="display: flex; align-items: center; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--card-border); padding: 12px 18px; border-radius: 8px; gap: 14px; flex-wrap: wrap;">
+                    <span id="donationAddress" style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-primary); letter-spacing: 0.5px; word-break: break-all;">0x6DfF48Bd8e00f0c30D4815F460d7A37b2434E10E</span>
+                    <button id="copyAddressBtn" class="btn btn-primary btn-small" style="padding: 6px 12px; font-size: 0.8rem; font-weight: bold;">Copy Address</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Roadmap -->
+        <section id="roadmap" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">The Web3 Wealth Creation Roadmap</h2>
+                <p class="section-desc">Complete interactive modules to unlock skills and build high-ticket client features.</p>
+            </div>
+
+            <div class="roadmap-container">
+                <!-- Step 1 -->
+                <div class="roadmap-step completed" data-step="1">
+                    <div class="step-num">1</div>
+                    <div class="step-content glass-card">
+                        <h3>Foundations of Web3 & Frontend Integration</h3>
+                        <p>Learn to hook user interfaces to decentralized blockchains. Masters HTML/CSS, basic JS, and libraries like ethers.js or viem.</p>
+                        <div class="step-rewards">
+                            <span class="reward-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> HTML/CSS/JS Layouts</span>
+                            <span class="reward-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Wallet Connection APIs</span>
+                        </div>
+                        <button class="btn btn-small btn-primary start-step-btn" data-step="1">Review Module (+20 EXP)</button>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="roadmap-step" data-step="2">
+                    <div class="step-num">2</div>
+                    <div class="step-content glass-card">
+                        <h3>Smart Contract Mastery (Solidity & Rust)</h3>
+                        <p>Write secure code governing millions of dollars in value on Ethereum or Solana. Create NFTs, ERC-20 tokens, and governance protocols.</p>
+                        <div class="step-rewards">
+                            <span class="reward-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> ERC-20 / ERC-721 Standards</span>
+                            <span class="reward-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Security & Gas Optimization</span>
+                        </div>
+                        <button class="btn btn-small btn-secondary start-step-btn" data-step="2">Unlock Solidity Module (+30 EXP)</button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="roadmap-step" data-step="3">
+                    <div class="step-num">3</div>
+                    <div class="step-content glass-card">
+                        <h3>DeFi Protocol Audits & Advanced DApps</h3>
+                        <p>Evaluate other smart contracts for potential security loopholes. Auditing is one of the highest paying jobs in the entire Web3 space.</p>
+                        <div class="step-rewards">
+                            <span class="reward-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Smart Contract Audits</span>
+                            <span class="reward-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Flash Loans & Liquidity Pools</span>
+                        </div>
+                        <button class="btn btn-small btn-secondary start-step-btn" data-step="3">Unlock DeFi Audits (+50 EXP)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Interactive DApps -->
+        <section id="dapps" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Interactive Mini-DApp Simulations</h2>
+                <p class="section-desc">Experience Web3 interactions directly inside this responsive glass dashboard.</p>
+            </div>
+
+            <div class="grid grid-2">
+                <!-- NFT Minter Simulator -->
+                <div class="card glass-card">
+                    <h3>Nexus Mock NFT Portal</h3>
+                    <p class="card-sub">Simulate a Web3 NFT minting transaction directly on-chain.</p>
+                    <div class="nft-preview-box">
+                        <div class="nft-glowing-art" id="nftArt">
+                            <span>// NFT GENERATOR</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nftName">Asset Metadata Name</label>
+                        <input type="text" id="nftName" placeholder="e.g. Cyber Punk #981" class="form-input">
+                    </div>
+                    <button class="btn btn-primary btn-block btn-glow" id="mintNftBtn">Mint Mock NFT</button>
+                    <div id="mintStatus" class="status-msg"></div>
+                </div>
+
+                <!-- ERC-20 Swap Simulator -->
+                <div class="card glass-card">
+                    <h3>Nexus Liquidity Swap</h3>
+                    <p class="card-sub">Swap mock crypto tokens dynamically and track theoretical yields.</p>
+                    <div class="swap-interface">
+                        <div class="swap-input-group">
+                            <label>Pay</label>
+                            <div class="swap-row">
+                                <input type="number" id="swapPayAmt" value="1.0" class="form-input swap-val">
+                                <select id="swapPayToken" class="form-input token-select">
+                                    <option value="ETH">ETH</option>
+                                    <option value="USDC">USDC</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="swap-arrow-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="m21 8-4-4-4 4"/><path d="M17 4v16"/></svg>
+                        </div>
+                        <div class="swap-input-group">
+                            <label>Receive (Estimated)</label>
+                            <div class="swap-row">
+                                <input type="text" id="swapReceiveAmt" value="3421.80" class="form-input swap-val" readonly>
+                                <select id="swapReceiveToken" class="form-input token-select">
+                                    <option value="USDC">USDC</option>
+                                    <option value="ETH">ETH</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="swap-metrics">
+                            <span>Slippage: <strong class="cyan-text">0.5%</strong></span>
+                            <span>Est. Gas Fee: <strong class="purple-text" id="swapGas">~$5.40</strong></span>
+                        </div>
+                        <button class="btn btn-accent btn-block" id="swapBtn">Execute Mock Swap</button>
+                        <div id="swapStatus" class="status-msg"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Earning Strategy -->
+        <section id="freelance" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Launch Your Freelance Web3 Agency</h2>
+                <p class="section-desc">Actionable steps to generate high-paying clients using the skills we build.</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card glass-card highlight-border">
+                    <div class="card-icon cyan-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h4>1. Premium DApp Development</h4>
+                    <p>Clients pay between $2,000 to $10,000 for standard landing pages integrated with wallet sign-ins and smart contracts.</p>
+                </div>
+                
+                <div class="card glass-card highlight-border">
+                    <div class="card-icon purple-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>2. Smart Contract Auditing</h4>
+                    <p>Learn basic automated tools like Slither and Mythril to perform safety checks on token launches. Simple audits yield $1k - $5k.</p>
+                </div>
+
+                <div class="card glass-card highlight-border">
+                    <div class="card-icon yellow-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    </div>
+                    <h4>3. NFT Drop Strategy</h4>
+                    <p>Help local artists or businesses launch custom art token collections. Package contract deployment and web integration together.</p>
+                </div>
+            </div>
+
+            <div class="agency-generator glass-card">
+                <h3>Nexus Web3 Idea Generator</h3>
+                <p>Generate a niche startup idea to launch as a freelance project or SaaS business!</p>
+                <div class="generator-output" id="ideaOutput">
+                    Click below to generate a highly marketable Web3 DApp idea you can start building today!
+                </div>
+                <button class="btn btn-accent btn-glow" id="genIdeaBtn">Generate Web3 Startup Idea</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Nexus3 Hub. Built to empower Web3 Builders starting from scratch.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
